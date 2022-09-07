@@ -15,6 +15,6 @@ class Controller extends BaseController
 
     public function index(){
         $vehicles = Caronsells::orderBy('created_at', 'desc')->paginate(6);
-        return view('welcome', compact('vehicles'));
+        return view('index', compact('vehicles'));
     }
 }
