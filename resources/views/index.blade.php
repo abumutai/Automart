@@ -4,7 +4,7 @@
 <!-- Mirrored from storage.googleapis.com/theme-vessel-items/checking-sites/autocar-2-html/HTML/main/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 18:44:29 GMT -->
 
 <head>
-    <title>Autocar - Automobile HTML5 Template</title>
+    <title>Automart|AAKenya</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
 
@@ -27,7 +27,7 @@
     <!-- Custom stylesheet -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/sidebar.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" type="text/css" id="style_sheet" href="{{ asset('assets/css/skins/yellow.css') }}">
+    <link rel="stylesheet" type="text/css" id="style_sheet" href="{{ asset('assets/css/skins/#CBBC27.css') }}">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
@@ -81,13 +81,15 @@
                 <div class="navbar-collapse collapse w-100 justify-content-end" id="navbar">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown active">
-                            <a class="nav-link font-weight-bold" href=""> &nbsp; &nbsp; Buying a Car?<br> <button
-                                    class="btn btn-warning rounded-pill"> <span style="color: #00472F"> GET STARTED
+                            <a class="nav-link font-weight-bold" href="{{ route('all_cars') }}"> &nbsp; &nbsp; Buying a
+                                Car?<br> <button class="btn btn-warning rounded-pill"> <span style="color: #00472F"> GET
+                                        STARTED
                                         HERE</span></button></a>
                         </li>
                         <li class="nav-item dropdown active">
 
-                            <a class="nav-link font-weight-bold" href=""> &nbsp; &nbsp; &nbsp; Selling a Car?
+                            <a class="nav-link font-weight-bold" href="{{ route('dealerHome') }}"> &nbsp; &nbsp; &nbsp;
+                                Selling a Car?
                                 <br> <button class="btn btn-warning rounded-pill"> <span style="color: #00472F"> GET
                                         STARTED HERE</span></button></a>
                         </li>
@@ -97,7 +99,7 @@
                         <li class="nav-item dropdown active">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <a class=" nav-link font-weight-bold" href=""> <span
+                                    <a class=" nav-link font-weight-bold" href="{{ route('contact') }}"> <span
                                             style="font-size: 35px;color:#CBBC27"> |</span><i class="fa fa-home fa-3x"
                                             style="font-size: 35px;color:#CBBC27"></i><span
                                             style="font-size: 35px;color:#CBBC27">|</span>
@@ -126,7 +128,7 @@
         </div>
         <div class="sidebar-inner">
             <div class="sidebar-logo">
-                <a href="index.html">
+                <a href="/">
                     {{-- <img src="{{asset('assets/img/logos/black-logo.png')}}" alt="sidebarlogo"> --}}
                     AAutomart | AAKENYA
                 </a>
@@ -270,12 +272,12 @@
 
     <!-- Banner start -->
     <div class="banner" id="banner">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide h-60" data-ride="carousel">
             <div class="carousel-inner banner-slider-inner text-center">
                 <div class="carousel-item banner-max-height active item-bg">
                     <img class="d-block w-100 h-100" src="{{ asset('assets/img/banner/img-6.jpg') }}"
                         alt="banner">
-                    <div class="carousel-content container banner-info-2 bi-2">
+                    <div class="carousel-content container banner-info-2 bi-2 h-100">
                         <div class="row bi5">
                             <div class="col-lg-7 text-start">
                                 <div class="banner-content3">
@@ -304,9 +306,9 @@
                                                 <option>Honda</option>
                                                 <option>Nissan</option>
                                             </select> --}}
-                                            <button class="btn btn-warning rounded ">
+                                            <a href="{{ route('login') }}" class="btn btn-warning rounded ">
                                                 <h4 style="color: #00472F"> SIGN IN</h4>
-                                            </button>
+                                            </a>
                                             <h5>New User? Click Here</h5>
                                         </div>
                                         <div class="form-group ">
@@ -444,106 +446,123 @@
     <div class="search-box-2">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="inline-search-area">
-                        <div class="row row-3">
-                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                <select class="selectpicker search-fields" name="select-brand">
-                                    <option> Location</option>
-                                    <option>Kenya</option>
-                                    <option>Other</option>
-                                </select>
+                <form action="{{ route('search') }}" method="POST">
+                    <!-- show success message -->
+                    @if (session('successMsg'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('successMsg') }}
+                        </div>
+                    @endif
+                    <!-- show error messages -->
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                            <div class="alert alert-danger" role="alert">
+                                {{ $error }}
                             </div>
-                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                <select class="selectpicker search-fields" name="select-brand">
-                                    <option> Condition</option>
-                                    <option>Brand New</option>
-                                    <option>Foreign Used</option>
-                                    <option value="">Kenyan Used</option>
-                                </select>
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                <select class="selectpicker search-fields" name="select-make">
-                                    <option> Make</option>
-                                    <option>BMW</option>
-                                    <option>Honda</option>
-                                    <option>Lamborghini</option>
-                                    <option>Sports Car</option>
-                                </select>
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                <select class="selectpicker search-fields" name="select-location">
-                                    <option> Body</option>
-                                    <option>United States</option>
-                                    <option>United Kingdom</option>
-                                </select>
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                <select class="selectpicker search-fields" name="select-year">
-                                    <option> Year of Manufacture</option>
-                                    <option>2016</option>
-                                    <option>2017</option>
-                                    <option>2018</option>
-                                    <option>2021</option>
-                                </select>
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                <select class="selectpicker search-fields" name="select-type">
-                                    <option> Fuel </option>
-                                    <option>Petrol</option>
-                                    <option>Diesel</option>
-                                </select>
-                            </div>
-                            <div class="col-xl-1 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                <select class="selectpicker search-fields" name="select-year">
-                                    <option> Engine CC</option>
-                                    <option>1500</option>
-                                    <option>2000</option>
+                        @endforeach
+                    @endif
+                    {{ csrf_field() }}
+                    <div class="col-lg-12">
+                        <div class="inline-search-area">
+                            <div class="row row-3">
+                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
+                                    <select class="selectpicker search-fields" name="select-brand">
+                                        <option> Location</option>
+                                        <option>Kenya</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
+                                    <select class="selectpicker search-fields" name="select-brand">
+                                        <option> Condition</option>
+                                        <option>Brand New</option>
+                                        <option>Foreign Used</option>
+                                        <option value="">Kenyan Used</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
+                                    <select class="selectpicker search-fields" name="select-make">
+                                        <option> Make</option>
+                                        <option>BMW</option>
+                                        <option>Honda</option>
+                                        <option>Lamborghini</option>
+                                        <option>Sports Car</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
+                                    <select class="selectpicker search-fields" name="select-location">
+                                        <option> Body</option>
+                                        <option>United States</option>
+                                        <option>United Kingdom</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
+                                    <select class="selectpicker search-fields" name="select-year">
+                                        <option> Year of Manufacture</option>
+                                        <option>2016</option>
+                                        <option>2017</option>
+                                        <option>2018</option>
+                                        <option>2021</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
+                                    <select class="selectpicker search-fields" name="select-type">
+                                        <option> Fuel </option>
+                                        <option>Petrol</option>
+                                        <option>Diesel</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-1 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
+                                    <select class="selectpicker search-fields" name="select-year">
+                                        <option> Engine CC</option>
+                                        <option>1500</option>
+                                        <option>2000</option>
 
-                                </select>
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                <select class="selectpicker search-fields" name="select-type">
-                                    <option> Transmission </option>
-                                    <option>Manual</option>
-                                    <option>Automatic</option>
-                                </select>
-                            </div>
-                            <div class="col-xl-1 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                <select class="selectpicker search-fields" name="select-year">
-                                    <option> Color</option>
-                                    <option>Gold</option>
-                                    <option>Blue</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
+                                    <select class="selectpicker search-fields" name="select-type">
+                                        <option> Transmission </option>
+                                        <option>Manual</option>
+                                        <option>Automatic</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-1 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
+                                    <select class="selectpicker search-fields" name="select-year">
+                                        <option> Color</option>
+                                        <option>Gold</option>
+                                        <option>Blue</option>
 
-                                </select>
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
+                                    </select>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
 
-                                <input type="text" class="form-control" name="" id=""
-                                    placeholder=" Mileage Minimum">
+                                    <input type="text" class="form-control" name="" id=""
+                                        placeholder=" Mileage Minimum">
 
-                            </div>
-                            <div class="col-xl-1 search-col mt-3" style="text-align: center">
+                                </div>
+                                <div class="col-xl-1 search-col mt-3" style="text-align: center">
 
-                                <h1> to </h1>
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
+                                    <h1> to </h1>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
 
-                                <input type="text" class="form-control" name="" id=""
-                                    placeholder=" Mileage Minimum">
+                                    <input type="text" class="form-control" name="" id=""
+                                        placeholder=" Mileage Minimum">
 
-                            </div>
-                            <div class="col-xl-1 search-col mt-3" style="text-align: center">
-                                <i class="fa fa-play fa-4x" style="color: #00472F"></i>
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 mt-3">
-                                <button class="btn white-btn btn-search w-100" style="background: #00472F">
-                                    <h4><strong>Proceed </strong></h4>
-                                </button>
+                                </div>
+                                <div class="col-xl-1 search-col mt-3" style="text-align: center">
+                                    <i class="fa fa-play fa-4x" style="color: #00472F"></i>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 mt-3">
+                                    <button class="btn white-btn btn-search w-100" style="background: #00472F">
+                                        <h4><strong>Proceed </strong></h4>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -597,7 +616,8 @@
                         </div>
                         <div class="footer clearfix" style="text-align: center;background:rgb(190, 186, 186)">
                             <div class="w-100 ratings">
-                                <i class="fa fa-phone text-success"></i> Call or Chat with the owner <i class="fa fa-envelope text-success"></i>
+                                <i class="fa fa-phone text-success"></i> Call or Chat with the owner <i
+                                    class="fa fa-envelope text-success"></i>
                             </div>
                         </div>
                     </div>
@@ -610,7 +630,7 @@
                             <div class="tag">Best Deal</div>
 
                         </div>
-                        <div class="detail" style="background:yellow">
+                        <div class="detail" style="background:#CBBC27">
 
                             <div class="location ratings" style="margin-left: -5%">
                                 <i class="fa fa-star text-success"></i>
@@ -636,9 +656,10 @@
                             </div>
                         </div>
 
-                        <div class="footer clearfix" style="text-align: center;background:yellow">
+                        <div class="footer clearfix" style="text-align: center;background:#CBBC27">
                             <div class="w-100 ratings">
-                                <i class="fa fa-phone text-success"></i> Call or Chat with the owner <i class="fa fa-envelope text-success"></i>
+                                <i class="fa fa-phone text-success"></i> Call or Chat with the owner <i
+                                    class="fa fa-envelope text-success"></i>
                             </div>
                         </div>
 
@@ -680,7 +701,8 @@
 
                         <div class="footer clearfix" style="text-align: center;background:rgb(190, 186, 186)">
                             <div class="w-100 ratings">
-                                <i class="fa fa-phone text-success"></i> Call or Chat with the owner <i class="fa fa-envelope text-success"></i>
+                                <i class="fa fa-phone text-success"></i> Call or Chat with the owner <i
+                                    class="fa fa-envelope text-success"></i>
                             </div>
                         </div>
 
@@ -693,7 +715,7 @@
                                 alt="car-photo">
                             <div class="tag">Best Deal</div>
                         </div>
-                        <div class="detail" style="background:yellow">
+                        <div class="detail" style="background:#CBBC27">
 
                             <div class="location ratings" style="margin-left: -5%">
                                 <i class="fa fa-star text-success"></i>
@@ -719,9 +741,10 @@
                             </div>
                         </div>
 
-                        <div class="footer clearfix" style="text-align: center; background:yellow">
+                        <div class="footer clearfix" style="text-align: center; background:#CBBC27">
                             <div class="w-100 ratings">
-                                <i class="fa fa-phone text-success"></i> Call or Chat with the owner <i class="fa fa-envelope text-success"></i>
+                                <i class="fa fa-phone text-success"></i> Call or Chat with the owner <i
+                                    class="fa fa-envelope text-success"></i>
                             </div>
                         </div>
 
@@ -763,7 +786,8 @@
 
                         <div class="footer clearfix" style="text-align: center;background:rgb(190, 186, 186)">
                             <div class="w-100 ratings">
-                                <i class="fa fa-phone text-success"></i> Call or Chat with the owner <i class="fa fa-envelope text-success"></i>
+                                <i class="fa fa-phone text-success"></i> Call or Chat with the owner <i
+                                    class="fa fa-envelope text-success"></i>
                             </div>
                         </div>
 
@@ -776,7 +800,7 @@
                                 alt="car-photo">
                             <div class="tag">Best Deal</div>
                         </div>
-                        <div class="detail" style="background:yellow">
+                        <div class="detail" style="background:#CBBC27">
 
                             <div class="location ratings" style="margin-left: -5%">
                                 <i class="fa fa-star text-success"></i>
@@ -803,9 +827,10 @@
                             </div>
                         </div>
 
-                        <div class="footer clearfix" style="text-align: center; background:yellow">
+                        <div class="footer clearfix" style="text-align: center; background:#CBBC27">
                             <div class="w-100 ratings">
-                                <i class="fa fa-phone text-success"></i> Call or Chat with the owner <i class="fa fa-envelope text-success"></i>
+                                <i class="fa fa-phone text-success"></i> Call or Chat with the owner <i
+                                    class="fa fa-envelope text-success"></i>
                             </div>
                         </div>
                     </div>
@@ -818,7 +843,7 @@
 
 
     <!-- Footer start -->
-    <footer class="main-footer-2" style="background: yellow;max-height: 20%">
+    <footer class="main-footer-2" style="background: #CBBC27;max-height: 20%">
         <div class="container2">
             <div class="row">
                 <div class="col-lg-3">

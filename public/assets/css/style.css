@@ -35,7 +35,7 @@ Version:    1.1.0
 html, body {
     height: 100%;
     font-family: 'Mulish', sans-serif;
-    background: yellow;
+    background: #CBBC27;
 }
 
 a {
@@ -2867,7 +2867,7 @@ input[type=checkbox]:checked + label:before {
 .car-box .footer2 {
     font-size: 15px;
     border-top: solid 1px #efefef;
-    background: yellow !important;
+    background: #CBBC27 !important;
 }
 
 .car-box .ratings {
