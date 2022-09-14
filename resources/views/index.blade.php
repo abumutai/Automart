@@ -9,28 +9,28 @@
     <meta charset="utf-8">
 
     <!-- External CSS libraries -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-submenu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/bootstrap-submenu.css') }}">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-select.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/magnific-popup.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/fonts/font-awesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/fonts/flaticon/font/flaticon.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/fonts/linearicons/style.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery.mCustomScrollbar.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/dropzone.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/lightbox.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jnoty.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/bootstrap-select.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/fonts/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/fonts/flaticon/font/flaticon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/fonts/linearicons/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/jquery.mCustomScrollbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/dropzone.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/lightbox.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/jnoty.css') }}">
 
     <!-- Custom stylesheet -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/sidebar.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" type="text/css" id="style_sheet" href="{{ asset('assets/css/skins/#CBBC27.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/sidebar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" id="style_sheet" href="{{ url('assets/css/skins/#CBBC27.css') }}">
 
     <!-- Favicon icon -->
-    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url('assets/img/favicon.ico') }}" type="image/x-icon">
 
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -41,16 +41,16 @@
         rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/ie10-viewport-bug-workaround.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/ie10-viewport-bug-workaround.css') }}">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="{{ asset('assets/js/ie8-responsive-file-warning.js') }}"></script><![endif]-->
-    <script src="{{ asset('assets/js/ie-emulation-modes-warning.js') }}"></script>
+    <!--[if lt IE 9]><script src="{{ url('assets/js/ie8-responsive-file-warning.js') }}"></script><![endif]-->
+    <script src="{{ url('assets/js/ie-emulation-modes-warning.js') }}"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="{{ asset('assets/js/html5shiv.min.js') }}"></script>
-    <script src="{{ asset('assets/js/respond.min.js') }}"></script>
+    <script src="{{ url('assets/js/html5shiv.min.js') }}"></script>
+    <script src="{{ url('assets/js/respond.min.js') }}"></script>
     <![endif]-->
     <style>
         input {
@@ -86,7 +86,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand company-logo" href="index.html">
-                    {{-- <img src="{{asset('assets/img/favicon.ico')}}" alt="logo"> --}}
+                    {{-- <img src="{{url('assets/img/favicon.ico')}}" alt="logo"> --}}
                     <h1 class="text-white"> Automart | AAKENYA</h1>
                 </a>
                 <button class="navbar-toggler" type="button" id="drawer">
@@ -143,7 +143,7 @@
         <div class="sidebar-inner">
             <div class="sidebar-logo">
                 <a href="/">
-                    {{-- <img src="{{asset('assets/img/logos/black-logo.png')}}" alt="sidebarlogo"> --}}
+                    {{-- <img src="{{url('assets/img/logos/black-logo.png')}}" alt="sidebarlogo"> --}}
                     AAutomart | AAKENYA
                 </a>
             </div>
@@ -289,7 +289,7 @@
         <div id="carouselExampleIndicators" class="carousel slide h-60" data-ride="carousel">
             <div class="carousel-inner banner-slider-inner text-center">
                 <div class="carousel-item banner-max-height active item-bg">
-                    <img class="d-block w-100 h-100" src="{{ asset('assets/img/banner/img-6.jpg') }}"
+                    <img class="d-block w-100 h-100" src="{{ url('assets/img/banner/img-6.jpg') }}"
                         alt="banner">
                     <div class="carousel-content container banner-info-2 bi-2 h-100">
                         <div class="row bi5">
@@ -629,7 +629,7 @@
                 <div class="slide slide-box">
                     <div class="car-box">
                         <div class="car-image">
-                            <img class="d-block w-100" src="{{ asset('assets/img/car/car-3.jpg') }}"
+                            <img class="d-block w-100" src="{{ url('assets/img/car/car-3.jpg') }}"
                                 alt="car-photo">
                             <div class="tag">Best Deal</div>
                         </div>
@@ -669,7 +669,7 @@
                 <div class="slide slide-box">
                     <div class="car-box">
                         <div class="car-image">
-                            <img class="d-block w-100" src="{{ asset('assets/img/car/car-4.jpg') }}"
+                            <img class="d-block w-100" src="{{ url('assets/img/car/car-4.jpg') }}"
                                 alt="car-photo">
                             <div class="tag">Best Deal</div>
 
@@ -712,7 +712,7 @@
                 <div class="slide slide-box">
                     <div class="car-box">
                         <div class="car-image">
-                            <img class="d-block w-100" src="{{ asset('assets/img/car/car-1.jpg') }}"
+                            <img class="d-block w-100" src="{{ url('assets/img/car/car-1.jpg') }}"
                                 alt="car-photo">
                             <div class="tag">Best Deal</div>
                         </div>
@@ -755,7 +755,7 @@
                 <div class="slide slide-box">
                     <div class="car-box">
                         <div class="car-image">
-                            <img class="d-block w-100" src="{{ asset('assets/img/car/car-2.jpg') }}"
+                            <img class="d-block w-100" src="{{ url('assets/img/car/car-2.jpg') }}"
                                 alt="car-photo">
                             <div class="tag">Best Deal</div>
                         </div>
@@ -797,7 +797,7 @@
                 <div class="slide slide-box">
                     <div class="car-box">
                         <div class="car-image">
-                            <img class="d-block w-100" src="{{ asset('assets/img/car/car-5.jpg') }}"
+                            <img class="d-block w-100" src="{{ url('assets/img/car/car-5.jpg') }}"
                                 alt="car-photo">
                             <div class="tag">Best Deal</div>
                         </div>
@@ -840,7 +840,7 @@
                 <div class="slide slide-box">
                     <div class="car-box">
                         <div class="car-image">
-                            <img class="d-block w-100" src="{{ asset('assets/img/car/car-6.jpg') }}"
+                            <img class="d-block w-100" src="{{ url('assets/img/car/car-6.jpg') }}"
                                 alt="car-photo">
                             <div class="tag">Best Deal</div>
                         </div>
@@ -891,8 +891,8 @@
         <div class="container2">
             <div class="row">
                 <div class="col-lg-3">
-                    <img src="{{ asset('images/iphone.png') }}" alt="iphone"> <br>
-                    <img src="{{ asset('images/playstore.png') }}" alt="iphone">
+                    <img src="{{ url('images/iphone.png') }}" alt="iphone"> <br>
+                    <img src="{{ url('images/playstore.png') }}" alt="iphone">
                 </div>
                 <div class="col-lg-3">
                     <h1 style="color: #00472F;font-size:400%">DOWNLOAD </h1>
@@ -943,7 +943,7 @@
                         <div class="row modal-raw">
                             <div class="col-lg-6 modal-left">
                                 <div class="item active">
-                                    <img src="{{ asset('assets/img/car-11.jpg') }}" alt="best-car"
+                                    <img src="{{ url('assets/img/car-11.jpg') }}" alt="best-car"
                                         class="img-fluid">
                                     <div class="sobuz">
                                         <div class="price-box">
@@ -1009,32 +1009,32 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap-submenu.js') }}"></script>
-    <script src="{{ asset('assets/js/rangeslider.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.mb.YTPlayer.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap-select.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.easing.1.3.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.scrollUp.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-    <script src="{{ asset('assets/js/dropzone.js') }}"></script>
-    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.filterizr.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.countdown.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.mousewheel.min.js') }}"></script>
-    <script src="{{ asset('assets/js/lightgallery-all.js') }}"></script>
-    <script src="{{ asset('assets/js/jnoty.js') }}"></script>
-    <script src="{{ asset('assets/js/sidebar.js') }}"></script>
-    <script src="{{ asset('assets/js/app.js') }}"></script>
+    <script src="{{ url('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ url('assets/js/popper.min.js') }}"></script>
+    <script src="{{ url('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url('assets/js/bootstrap-submenu.js') }}"></script>
+    <script src="{{ url('assets/js/rangeslider.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.mb.YTPlayer.js') }}"></script>
+    <script src="{{ url('assets/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.easing.1.3.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.scrollUp.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ url('assets/js/dropzone.js') }}"></script>
+    <script src="{{ url('assets/js/slick.min.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.filterizr.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.countdown.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.mousewheel.min.js') }}"></script>
+    <script src="{{ url('assets/js/lightgallery-all.js') }}"></script>
+    <script src="{{ url('assets/js/jnoty.js') }}"></script>
+    <script src="{{ url('assets/js/sidebar.js') }}"></script>
+    <script src="{{ url('assets/js/app.js') }}"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{{ asset('assets/js/ie10-viewport-bug-workaround.js') }}"></script>
+    <script src="{{ url('assets/js/ie10-viewport-bug-workaround.js') }}"></script>
     <!-- Custom javascript -->
-    <script src="{{ asset('assets/js/ie10-viewport-bug-workaround.js') }}"></script>
+    <script src="{{ url('assets/js/ie10-viewport-bug-workaround.js') }}"></script>
 
     <script>
         $(document).ready(function() {
