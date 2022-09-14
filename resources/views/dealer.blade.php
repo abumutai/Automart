@@ -26,13 +26,11 @@
         }
 
         .show-when-target:target {
-
             position: absolute;
             max-width: 94%;
             line-height: 2em;
             font-size: 1em;
             font-weight: bold;
-
             color: #FFF;
             border-radius: .4em;
             background: rgba(0, 0, 0, .5);
@@ -66,35 +64,45 @@
                 <div class="alert alert-success" role="alert">
                     Welcome to Your Profile: {{ $user->name }},
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 mt-5 pt-5">
                     <div class="col-md-12">
-                        <a href="#5"><button type="submit" class="btn btn-primary btn-block">Home</button></a>
+                        <a href="#5"> <button type="submit" class="btn  btn-block"
+                                style="background: #00472F;color:white;font-size:120%;text-align:left"> <i
+                                    class="fa fa-home"></i> Home</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#0"><button type="submit" class="btn btn-primary btn-block">My Cars</button></a>
+                        <a href="#0"><button type="submit" class="btn  btn-block"
+                                style="background: #00472F;color:white;font-size:120%;text-align:left"><i
+                                    class="fa fa-car"></i> My Cars</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#1"><button type="submit"
-                                class="btn btn-primary btn-block">Subscriptions</button></a>
+                        <a href="#1"><button type="submit" class="btn  btn-block"
+                                style="background: #00472F;color:white;font-size:120%;text-align:left"><i
+                                    class="fa fa-credit-card"></i> Subscriptions</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#2"><button type="submit" class="btn btn-primary btn-block">My Sells</button></a>
+                        <a href="#2"><button type="submit" class="btn  btn-block"
+                                style="background: #00472F;color:white;font-size:120%;text-align:left"><i
+                                    class="fa fa-money-bill"></i> My Sells</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#3"><button type="submit" class="btn btn-primary btn-block">Add Car</button></a>
+                        <a href="#3"><button type="submit" class="btn  btn-block"
+                                style="background: #00472F;color:white;font-size:120%;text-align:left"><i
+                                    class="fa fa-plus"></i> Add Car</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="{{ route('logout') }}"><button type="submit"
-                                class="btn btn-danger btn-block">Logout</button></a>
+                        <a href="{{ route('logout') }}"><button type="submit" class="btn  btn-block"
+                                style="background: #00472F;color:white;font-size:120%;text-align:left"> <i
+                                    class="fa fa-sign-out-alt"></i> Logout</button></a>
                     </div>
                     </br>
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-10  mt-5 pt-5">
                     <div class="row">
                         <div class="col-md-4" style="padding-bottom:20px; color:#000;">
                             <div class="card">
@@ -154,10 +162,10 @@
                     </div>
                 </div>
             </div>
-            <footer class="">
+            <footer class="mt-5 w-100 ">
                 <!-- Copyright -->
-                <div class="text-center p-3" style="background-color: rgba(0,0,0, 0.5); border-radius: 10px;">
-                    © 2021 Copyright:
+                <div class="text-center p-3" style="background-color: #CBBC27 ; border-radius: 10px;">
+                    © {{ now()->year }} Copyright:
                     <a class="text-center p-3" href="https://www.aakenya.co.ke/">Automobile Association of Kenya</a>
                 </div>
                 <!-- Copyright -->
@@ -167,37 +175,48 @@
         <!-- user profile end -->
 
         <!-- all cars tab start -->
-        <div id="0" class="show-when-target" style="background-color : rgba(0,0,0, 1) !Important;">
+        <div id="0" class="show-when-target w-100" style="background-color : #CBBC27 !Important;">
             <div class="row" style="padding-bottom: 0px;">
                 <div class="alert alert-success" role="alert">
                     All cars under Firstname: {{ $user->name }}, Email: {{ $user->email }}, Phone: {{ $user->number }}
                 </div>
                 <div class="col-md-2">
                     <div class="col-md-12">
-                        <a href="#5"><button type="submit" class="btn btn-primary btn-block">Home</button></a>
+                        <a href="#5"> <button type="submit" class="btn  btn-block"
+                                style="background: #00472F;color:white;font-size:120%;text-align:left"> <i
+                                    class="fa fa-home"></i> Home</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#0"><button type="submit" class="btn btn-primary btn-block">My Cars</button></a>
+                        <a href="#0"><button type="submit" class="btn  btn-block"
+                                style="background: #00472F;color:white;font-size:120%;text-align:left"><i
+                                    class="fa fa-car"></i> My Cars</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#1"><button type="submit"
-                                class="btn btn-primary btn-block">Subscriptions</button></a>
+                        <a href="#1"><button type="submit" class="btn  btn-block"
+                                style="background: #00472F;color:white;font-size:120%;text-align:left"><i
+                                    class="fa fa-credit-card"></i> Subscriptions</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#2"><button type="submit" class="btn btn-primary btn-block">My Sells</button></a>
+                        <a href="#2"><button type="submit" class="btn  btn-block"
+                                style="background: #00472F;color:white;font-size:120%;text-align:left"><i
+                                    class="fa fa-money-bill"></i> My Sells</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#3"><button type="submit" class="btn btn-primary btn-block">Add Car</button></a>
+                        <a href="#3"><button type="submit" class="btn  btn-block"
+                                style="background: #00472F;color:white;font-size:120%;text-align:left"><i
+                                    class="fa fa-plus"></i> Add Car</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="{{ route('logout') }}"><button type="submit"
-                                class="btn btn-danger btn-block">Logout</button></a>
+                        <a href="{{ route('logout') }}"><button type="submit" class="btn  btn-block"
+                                style="background: #00472F;color:white;font-size:120%;text-align:left"> <i
+                                    class="fa fa-sign-out-alt"></i> Logout</button></a>
                     </div>
+                    </br>
                     </br>
                 </div>
                 <div class="col-md-10">
@@ -209,11 +228,10 @@
                     We'll show your cars here updated.
                 </div>
             </div>
-            <footer class="">
+            <footer class="mt-5 w-100 pt-5">
                 <!-- Copyright -->
-                <div class="text-center p-3"
-                    style="background-color: rgba(255,255,255, 0.8); border-radius: 10px; color:#000;">
-                    © 2021 Copyright:
+                <div class="text-center p-3" style="background-color: #CBBC27 ; border-radius: 10px;">
+                    © {{ now()->year }} Copyright:
                     <a class="text-center p-3" href="https://www.aakenya.co.ke/">Automobile Association of Kenya</a>
                 </div>
                 <!-- Copyright -->
@@ -222,7 +240,7 @@
         <!-- all cars tab end -->
 
         <!-- Subscriptions tab start -->
-        <div id="1" class="show-when-target" style="background-color : rgba(0,0,0, 1) !Important;">
+        <div id="1" class="show-when-target" style="background-color : #CBBC27 !Important;">
             <div class="row" style="padding-bottom: 0px;">
                 <div class="alert alert-success" role="alert">
                     All Subscriptions made under Firstname: {{ $user->name }}, Email: {{ $user->email }}, Phone:
@@ -231,29 +249,29 @@
                 <div class="col-md-2">
                     <!-- sidebar -->
                     <div class="col-md-12">
-                        <a href="#5"><button type="submit" class="btn btn-primary btn-block">Home</button></a>
+                        <a href="#5"> <button type="submit" class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"> <i class="fa fa-home"></i> Home</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#0"><button type="submit" class="btn btn-primary btn-block">My Cars</button></a>
+                        <a href="#0"><button type="submit" class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"><i class="fa fa-car"></i> My Cars</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
                         <a href="#1"><button type="submit"
-                                class="btn btn-primary btn-block">Subscriptions</button></a>
+                                class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"><i class="fa fa-credit-card"></i> Subscriptions</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#2"><button type="submit" class="btn btn-primary btn-block">My Sells</button></a>
+                        <a href="#2"><button type="submit" class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"><i class="fa fa-money-bill"></i> My Sells</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#3"><button type="submit" class="btn btn-primary btn-block">Add Car</button></a>
+                        <a href="#3"><button type="submit" class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"><i class="fa fa-plus"></i> Add Car</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
                         <a href="{{ route('logout') }}"><button type="submit"
-                                class="btn btn-danger btn-block">Logout</button></a>
+                                class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"> <i class="fa fa-sign-out-alt"></i> Logout</button></a>
                     </div>
                     </br>
                 </div>
@@ -266,20 +284,21 @@
                     We'll keep this payments updated.
                 </div>
             </div>
-            <footer class="">
+            <footer class="mt-5 w-100 pt-5">
                 <!-- Copyright -->
-                <div class="text-center p-3"
-                    style="background-color: rgba(255,255,255, 0.8); border-radius: 10px; color:#000;">
-                    © 2022 Copyright:
+                <div class="text-center p-3" style="background-color: #CBBC27 ; border-radius: 10px;">
+                    © {{ now()->year }} Copyright:
                     <a class="text-center p-3" href="https://www.aakenya.co.ke/">Automobile Association of Kenya</a>
                 </div>
                 <!-- Copyright -->
             </footer>
+            
+            
         </div>
         <!-- Subscriptions tab end -->
 
         <!-- sold vehicles start -->
-        <div id="2" class="show-when-target" style="background-color : rgba(0,0,0, 1) !Important;">
+        <div id="2" class="show-when-target" style="background-color : #CBBC27 !Important;">
             <div class="row" style="padding-bottom: 0px;">
                 <div class="alert alert-success" role="alert">
                     All sold vehicles will be posted under Firstname: {{ $user->name }}, Email: {{ $user->email }},
@@ -288,29 +307,29 @@
                 <div class="col-md-2">
                     <!-- sidebar -->
                     <div class="col-md-12">
-                        <a href="#5"><button type="submit" class="btn btn-primary btn-block">Home</button></a>
+                        <a href="#5"> <button type="submit" class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"> <i class="fa fa-home"></i> Home</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#0"><button type="submit" class="btn btn-primary btn-block">My Cars</button></a>
+                        <a href="#0"><button type="submit" class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"><i class="fa fa-car"></i> My Cars</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
                         <a href="#1"><button type="submit"
-                                class="btn btn-primary btn-block">Subscriptions</button></a>
+                                class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"><i class="fa fa-credit-card"></i> Subscriptions</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#2"><button type="submit" class="btn btn-primary btn-block">My Sells</button></a>
+                        <a href="#2"><button type="submit" class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"><i class="fa fa-money-bill"></i> My Sells</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#3"><button type="submit" class="btn btn-primary btn-block">Add Car</button></a>
+                        <a href="#3"><button type="submit" class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"><i class="fa fa-plus"></i> Add Car</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
                         <a href="{{ route('logout') }}"><button type="submit"
-                                class="btn btn-danger btn-block">Logout</button></a>
+                                class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"> <i class="fa fa-sign-out-alt"></i> Logout</button></a>
                     </div>
                     </br>
                 </div>
@@ -323,11 +342,10 @@
                     We'll keep this updated.
                 </div>
             </div>
-            <footer class="">
+            <footer class="mt-5 w-100 pt-5" >
                 <!-- Copyright -->
-                <div class="text-center p-3"
-                    style="background-color: rgba(255,255,255, 0.8); border-radius: 10px; color:#000;">
-                    © 2021 Copyright:
+                <div class="text-center p-3" style="background-color: #CBBC27 ; border-radius: 10px;">
+                    © {{ now()->year }} Copyright:
                     <a class="text-center p-3" href="https://www.aakenya.co.ke/">Automobile Association of Kenya</a>
                 </div>
                 <!-- Copyright -->
@@ -336,7 +354,7 @@
         <!-- sold vehicles end -->
 
         <!-- add car start -->
-        <div id="3" class="show-when-target" style="background-color : rgba(0,100,0, 1) !Important;">
+        <div id="3" class="show-when-target" style="background-color : #CBBC27 !Important;">
             <div class="row" style="padding-bottom: 0px;">
                 <div class="alert alert-success" role="alert">
                     All your vehicles will be posted under Firstname: {{ $user->name }}, Email: {{ $user->email }},
@@ -345,29 +363,29 @@
                 <div class="col-md-2">
                     <!-- sidebar -->
                     <div class="col-md-12">
-                        <a href="#5"><button type="submit" class="btn btn-primary btn-block">Home</button></a>
+                        <a href="#5"> <button type="submit" class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"> <i class="fa fa-home"></i> Home</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#0"><button type="submit" class="btn btn-primary btn-block">My Cars</button></a>
+                        <a href="#0"><button type="submit" class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"><i class="fa fa-car"></i> My Cars</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
                         <a href="#1"><button type="submit"
-                                class="btn btn-primary btn-block">Subscriptions</button></a>
+                                class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"><i class="fa fa-credit-card"></i> Subscriptions</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#2"><button type="submit" class="btn btn-primary btn-block">My Sells</button></a>
+                        <a href="#2"><button type="submit" class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"><i class="fa fa-money-bill"></i> My Sells</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
-                        <a href="#3"><button type="submit" class="btn btn-primary btn-block">Add Car</button></a>
+                        <a href="#3"><button type="submit" class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"><i class="fa fa-plus"></i> Add Car</button></a>
                     </div>
                     </br>
                     <div class="col-md-12">
                         <a href="{{ route('logout') }}"><button type="submit"
-                                class="btn btn-danger btn-block">Logout</button></a>
+                                class="btn  btn-block"  style="background: #00472F;color:white;font-size:120%;text-align:left"> <i class="fa fa-sign-out-alt"></i> Logout</button></a>
                     </div>
                     </br>
                 </div>
@@ -390,7 +408,7 @@
                         <!--upload form here -->
                         <form action="{{ route('savecar') }}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
-                            <h3 class="form-title">Enter Vehicle Information » </h3>
+                            <h2 class="form-title" style="color: #00472F">Enter Vehicle Information » </h2>
                             <label class="gt-title" for="gt-title">Your listing title</label>
                             <input class="form-control" type="text" id="gt-title" tabindex="2" name="title"
                                 placeholder="Enter listing title" required style="text-transform:uppercase">
@@ -572,7 +590,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <h3 class="form-title">Select Vehicle Features » </h3>
+                            <h2 class="form-title" style="color: #00472F">Select Vehicle Features » </h2>
                             <div class="row">
                                 <div class="col-md-3">
                                     <input type="checkbox" value="4WD/AWD" id="4WD/AWD"
@@ -769,7 +787,7 @@
                                         <!--</table>-->
                                 </div>
                             </div>
-                            <h3 class="form-title">Personal Information</h3>
+                            <h2 class="form-title" style="color: #00472F">Personal Information</h2>
                             <div class="row">
                                 <div class="col-6">
                                     <input class="form-control" type="text" id="firstname" tabindex="22"
@@ -807,11 +825,10 @@
                         </form>
                     </div>
                 </div>
-                <footer class="">
+                <footer class="mt-5 w-100 pt-5" >
                     <!-- Copyright -->
-                    <div class="text-center p-3"
-                        style="background-color: rgba(255,255,255, 0.8); border-radius: 10px; color:#000;">
-                        © 2022 Copyright:
+                    <div class="text-center p-3" style="background-color: #CBBC27 ; border-radius: 10px;">
+                        © {{ now()->year }} Copyright:
                         <a class="text-center p-3" href="https://www.aakenya.co.ke/">Automobile Association of Kenya</a>
                     </div>
                     <!-- Copyright -->
@@ -837,10 +854,11 @@
                     dataType: 'json',
                     success: function(result) {
                         $('#car_model').html(
-                        '<option value="">Select Car Model</option>');
+                            '<option value="">Select Car Model</option>');
                         $.each(result.models, function(key, value) {
                             $("#car_model").append('<option value="' + value
-                                .car_model_id + '">' + value.car_model_name + '</option>');
+                                .car_model_id + '">' + value.car_model_name +
+                                '</option>');
                         });
                     }
                 });

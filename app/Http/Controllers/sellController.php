@@ -7,19 +7,20 @@ use App\Models\Caronsells;
 use App\Models\Payment;
 use App\Models\car_make;
 use App\Models\car_model;
-
+use App\Models\CarMake;
+use App\Models\CarModel;
 
 class sellController extends Controller
 {
     public function index(){
-        $make= car_make::all();
-        return view('sell' compact('make'));
+        $make= CarMake::all();
+        return view('sell', compact('make'));
     }
     // public function dealer()
     // {
     //     $make= car_make::all();
     //     return view('make'));
-    }
+    // }
     public function store(Request $request){
         $this->validate($request, [
             'title' => 'required',
@@ -98,7 +99,7 @@ class sellController extends Controller
     }
     public function getmodel($id)
     {
-        $model= car_models::where('car_make_id',$id)->pluck("car_model_name","id");
+        $model= CarModel::where('car_make_id',$id)->pluck("car_model_name","id");
         return json_encode($model);
     }
 

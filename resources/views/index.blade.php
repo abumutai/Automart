@@ -52,6 +52,20 @@
     <script src="{{ asset('assets/js/html5shiv.min.js') }}"></script>
     <script src="{{ asset('assets/js/respond.min.js') }}"></script>
     <![endif]-->
+    <style>
+        input {
+            color: #777 !important;
+        }
+
+        .selectpicker2,
+        input {
+            color: #777 !important;
+            /* text-align: center; */
+            text-transform: capitalize !important;
+            padding: 16.5px 20px 16px 15px !important;
+
+        }
+    </style>
 </head>
 
 <body>
@@ -332,9 +346,9 @@
                                 <div class="btn-group w-100" style="margin-left: 30%">
                                     <button class="btn btn-light rounded" style="width: 20%"><i
                                             class="fa fa-search fa-2x " style="color: #00472F;"></i></button>
-                                    <button class="btn btn-warning" style="width: 80%">
+                                    <a href="#search" class="btn btn-warning" style="width: 80%">
                                         <h5 style="color: #00472F;font-size:250%;" class="m-2">SEARCH HERE</h5>
-                                    </button>
+                                    </a>
                                     <br>
 
                                 </div>
@@ -443,7 +457,7 @@
     </div>
     <!-- Search box 3 end --> --}}
     <!-- Search box 2 start -->
-    <div class="search-box-2">
+    <div class="search-box-2" id="search">
         <div class="container">
             <div class="row">
                 <form action="{{ route('search') }}" method="POST">
@@ -466,92 +480,122 @@
                         <div class="inline-search-area">
                             <div class="row row-3">
                                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                    <select class="selectpicker search-fields" name="select-brand">
-                                        <option> Location</option>
-                                        <option>Kenya</option>
-                                        <option>Other</option>
+                                    <select class="selectpicker search-fields" name="make" id="car_make">
+                                        <option> Select Make</option>
+                                        @foreach ($makes as $item)
+                                            <option value="{{ $item->car_make_id }}">{{ $item->car_make_name }}
+                                            </option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                    <select class="selectpicker search-fields" name="select-brand">
-                                        <option> Condition</option>
-                                        <option>Brand New</option>
-                                        <option>Foreign Used</option>
-                                        <option value="">Kenyan Used</option>
+                                    <select class="selectpicker2 form-control search-fields" name="model"
+                                        id="car_model">
+                                        <option value="Any Make" selected="false">Select Model</option>
                                     </select>
                                 </div>
                                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                    <select class="selectpicker search-fields" name="select-make">
-                                        <option> Make</option>
-                                        <option>BMW</option>
-                                        <option>Honda</option>
-                                        <option>Lamborghini</option>
-                                        <option>Sports Car</option>
+                                    <select class="selectpicker search-fields" name="from_year">
+                                        <option> Year of Manufacture (From)</option>
+                                        <option value="2001">2001</option>
+                                        <option value="2002">2002</option>
+                                        <option value="2003">2003</option>
+                                        <option value="2004">2004</option>
+                                        <option value="2005">2005</option>
+                                        <option value="2006">2006</option>
+                                        <option value="2007">2007</option>
+                                        <option value="2008">2008</option>
+                                        <option value="2009">2009</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
                                     </select>
                                 </div>
                                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                    <select class="selectpicker search-fields" name="select-location">
-                                        <option> Body</option>
-                                        <option>United States</option>
-                                        <option>United Kingdom</option>
+                                    <select class="selectpicker search-fields" name="from_year">
+                                        <option> Year of Manufacture (To)</option>
+                                        <option value="2001">2001</option>
+                                        <option value="2002">2002</option>
+                                        <option value="2003">2003</option>
+                                        <option value="2004">2004</option>
+                                        <option value="2005">2005</option>
+                                        <option value="2006">2006</option>
+                                        <option value="2007">2007</option>
+                                        <option value="2008">2008</option>
+                                        <option value="2009">2009</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
                                     </select>
                                 </div>
                                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                    <select class="selectpicker search-fields" name="select-year">
-                                        <option> Year of Manufacture</option>
-                                        <option>2016</option>
-                                        <option>2017</option>
-                                        <option>2018</option>
-                                        <option>2021</option>
+                                    <select class="selectpicker search-fields" name="min_mileage">
+                                        <option> Minimum Mileage</option>
+                                        <option value="0" selected="selected" data-select2-id="13">0</option>
+                                        <option value="10000">10,000</option>
+                                        <option value="30000">30,000</option>
+                                        <option value="50000">50,000</option>
+                                        <option value="100000">100,000</option>
+                                        <option value="150000">150,000</option>
+                                        <option value="250000">250,000</option>
+                                        <option value="350000">350,000</option>
+                                        <option value="450000">450,000</option>
+                                        <option value="500000">500,000</option>
                                     </select>
                                 </div>
                                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                    <select class="selectpicker search-fields" name="select-type">
-                                        <option> Fuel </option>
-                                        <option>Petrol</option>
-                                        <option>Diesel</option>
+                                    <select class="selectpicker search-fields" name="max_mileage">
+                                        <option> Maximum Mileage </option>
+                                        <option value="0" selected="selected" data-select2-id="13">0</option>
+                                        <option value="10000">10,000</option>
+                                        <option value="30000">30,000</option>
+                                        <option value="50000">50,000</option>
+                                        <option value="100000">100,000</option>
+                                        <option value="150000">150,000</option>
+                                        <option value="250000">250,000</option>
+                                        <option value="350000">350,000</option>
+                                        <option value="450000">450,000</option>
+                                        <option value="500000">500,000</option>
                                     </select>
                                 </div>
-                                <div class="col-xl-1 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                    <select class="selectpicker search-fields" name="select-year">
-                                        <option> Engine CC</option>
-                                        <option>1500</option>
-                                        <option>2000</option>
 
-                                    </select>
+
+                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
+                                    <input type="text" class="form-control" name="min_engine" id=""
+                                        placeholder="Minimum Engine CC">
                                 </div>
                                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                    <select class="selectpicker search-fields" name="select-type">
-                                        <option> Transmission </option>
-                                        <option>Manual</option>
-                                        <option>Automatic</option>
-                                    </select>
-                                </div>
-                                <div class="col-xl-1 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-                                    <select class="selectpicker search-fields" name="select-year">
-                                        <option> Color</option>
-                                        <option>Gold</option>
-                                        <option>Blue</option>
-
-                                    </select>
+                                    <input type="text" class="form-control" name="max_engine" id=""
+                                        placeholder="Maximum Engine CC">
                                 </div>
                                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-
-                                    <input type="text" class="form-control" name="" id=""
-                                        placeholder=" Mileage Minimum">
-
-                                </div>
-                                <div class="col-xl-1 search-col mt-3" style="text-align: center">
-
-                                    <h1> to </h1>
+                                    <input type="text" class="form-control" name="min_price" id=""
+                                        placeholder="Minimum Price">
                                 </div>
                                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 search-col mt-3">
-
-                                    <input type="text" class="form-control" name="" id=""
-                                        placeholder=" Mileage Minimum">
-
+                                    <input type="text" class="form-control" name="max_price" id=""
+                                        placeholder="Maximum Price">
                                 </div>
-                                <div class="col-xl-1 search-col mt-3" style="text-align: center">
+                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 mt-3 search-col mt-3"
+                                    style="text-align: center">
                                     <i class="fa fa-play fa-4x" style="color: #00472F"></i>
                                 </div>
                                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 mt-3">
@@ -964,7 +1008,7 @@
             </div>
         </div>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
@@ -992,6 +1036,34 @@
     <!-- Custom javascript -->
     <script src="{{ asset('assets/js/ie10-viewport-bug-workaround.js') }}"></script>
 
+    <script>
+        $(document).ready(function() {
+            $('#car_make').on('change', function() {
+                var carmake_id = this.value;
+                $("#car_model").html('');
+                $.ajax({
+                    url: "{{ url('fetch/car-models') }}",
+                    type: "POST",
+                    data: {
+                        car_make_id: carmake_id,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    dataType: 'json',
+                    success: function(result) {
+
+                        $('#car_model').html(
+                            '<option value="">Select Car Model</option>');
+
+                        $.each(result.models, function(key, value) {
+                            $("#car_model").append('<option value="' + value
+                                .car_model_id + '">' + value.car_model_name +
+                                '</option>');
+                        });
+                    }
+                });
+            })
+        });
+    </script>
 </body>
 
 <!-- Mirrored from storage.googleapis.com/theme-vessel-items/checking-sites/autocar-2-html/HTML/main/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 18:44:30 GMT -->

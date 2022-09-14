@@ -2043,7 +2043,7 @@ input[type=checkbox]:checked + label:before {
 
 .inline-search-area .search-col .form-control,
 .inline-search-area button.btn-search i{
-    color: #fff;
+    color: #777;
 }
 
 .inline-search-area .search-col .form-control {

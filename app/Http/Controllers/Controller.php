@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
+use App\Models\CarMake;
 use App\Models\Caronsells;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 
 class Controller extends BaseController
@@ -15,6 +16,7 @@ class Controller extends BaseController
 
     public function index(){
         $vehicles = Caronsells::orderBy('created_at', 'desc')->paginate(6);
-        return view('index', compact('vehicles'));
+        $makes = CarMake::all();
+        return view('index', compact('vehicles','makes'));
     }
 }

@@ -51,7 +51,7 @@
         /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
         html {
             line-height: 1.15;
-            -webkit-text-size-adjust: 100%
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
@@ -435,7 +435,7 @@
 
     <style>
         body {
-            background-color: #006544;
+            background-color: #CBBC27;
             font-family: 'Nunito', sans-serif;
             color: #fff;
             padding-top: 10px;
@@ -448,10 +448,10 @@
 
 <body class="antialiased">
 
-    <div class="container-xxl"
+    <div class="container-xxl2"
         style="background-color : rgba(0,0,0, 0.3) !Important; width: 98% !Important;  padding-bottom : 10px !Important;">
 
-        <div class="row" style="color: #fff; padding-bottom: 15px;">
+        {{-- <div class="row" style="color: #fff; padding-bottom: 15px;">
             <div class="col-md-8">
                 <h1>AAutomart | AAKENYA</h1>
                 <h6>A PRODUCT OF AUTOMOBILE ASSOCIATION OF KENYA</h6>
@@ -460,10 +460,10 @@
                 <h2 style="font-family:Garamond;"><b>0709 933 000 | 0709 933 999</b>&nbsp;<button
                         style="font-size:24px"><i class="fa fa-phone"></i></button></h2>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgba(254,217,37, 0.8);">
+        <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #00472F;">
             <!-- Container wrapper -->
             <div class="container-fluid">
                 <!-- Toggle button -->
@@ -474,30 +474,30 @@
                 </button>
 
                 <!-- Collapsible wrapper -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse m-5" id="navbarSupportedContent">
                     <!-- Navbar brand -->
                     <a class="navbar-brand mt-2 mt-lg-0" href="{{ route('home') }}">
-                        <h3 style="font-family:Garamond;">AAutomart | Home</h3>
+                        <h1 style="font-family:Garamond;color:white;margin-left:5%!important">AAutomart | AA Kenya</h1>
                     </a>
                     <!-- Left links -->
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 30% !important">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('all_cars') }}">All Cars</a>
+                            <a class="nav-link" style="font-size: 25px;color:#CBBC27" href="{{ route('all_cars') }}">All Cars</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('dealerHome') }}">Sell Your Car</a>
+                            <a class="nav-link" style="font-size: 25px;color:#CBBC27" href="{{ route('dealerHome') }}">Sell Your Car</a>
                         </li>
                         <!--<li class="nav-item">-->
-                        <!--<a class="nav-link" href="{{ route('dealerHome') }}">Register as Seller</a>-->
+                        <!--<a class="nav-link" style="font-size: 25px;color:#CBBC27" href="{{ route('dealerHome') }}">Register as Seller</a>-->
                         <!--</li>-->
                         <!--<li class="nav-item">-->
-                        <!--<a class="nav-link" href="{{ route('userreg') }}">Register as Buyer</a>-->
+                        <!--<a class="nav-link" style="font-size: 25px;color:#CBBC27" href="{{ route('userreg') }}">Register as Buyer</a>-->
                         <!--</li>-->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                            <a class="nav-link" style="font-size: 25px;color:#CBBC27" href="{{ route('login') }}">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
+                            <a class="nav-link" style="font-size: 25px;color:#CBBC27" href="{{ route('contact') }}">Contact Us</a>
                         </li>
                     </ul>
                     <div class="float-end"><a class="nav-link" href="#"><button type="button"
@@ -516,7 +516,7 @@
 
         <!-- Footer -->
         <footer class="text-center text-lg-start text-muted"
-            style="background-color : #006544 !Important; padding-top: 1px;">
+            style="background-color : #CBBC27 !Important; padding-top: 1px;">
             <!-- Section: Links  -->
             <section class="">
                 <div class="container text-center text-md-start mt-5" style="color: #fff">
@@ -525,9 +525,9 @@
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                             <!-- Content -->
-                            <h6 class="text-uppercase fw-bold mb-4" style=" color: #fed925;">
+                            <h4 class="text-uppercase fw-bold mb-4" style=" color: #00472F;">
                                 <i class="fas fa-gem me-3"></i>AAutomart | AAkenya
-                            </h6>
+                            </h4>
                             <p>
                                 Thinking about selling your current vehicle?
 
@@ -541,7 +541,7 @@
                         <!-- Grid column -->
                         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                             <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4" style=" color: #fed925;">
+                            <h6 class="text-uppercase fw-bold mb-4" style=" color: #00472F;">
                                 Products
                             </h6>
                             <p>
@@ -570,7 +570,7 @@
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                             <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4" style=" color: #fed925;">
+                            <h6 class="text-uppercase fw-bold mb-4" style=" color: #00472F;">
                                 Useful links
                             </h6>
                             <p>
@@ -589,7 +589,7 @@
                         <!-- Grid column -->
                         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                             <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4" style=" color: #fed925;">
+                            <h6 class="text-uppercase fw-bold mb-4" style=" color: #00472F;">
                                 Contact
                             </h6>
                             <p><i class="fas fa-home me-3"></i> Renaissance Corporate Park, 8th Floor, Upper Hill,
