@@ -1006,7 +1006,7 @@
             </div>
         </div> --}}
         <!-- <div class="row" style="padding-left: 20px; padding-top: 10px; padding-bottom: 20px; color: #fff;">
-        <div class="col-6 col-md-4" style="background-color : rgba(0,0,0, 0.3) !Important;"> -->
+            <div class="col-6 col-md-4" style="background-color : rgba(0,0,0, 0.3) !Important;"> -->
         <span class="badge bg-info"
             style="width: 100%; padding-top:10px;
 padding-bottom:10px; background-color: rgba(254,217,37, 0.8) !Important;">DEAL
@@ -1026,7 +1026,7 @@ padding-bottom:10px; background-color: rgba(254,217,37, 0.8) !Important;">DEAL
                 <a href="#" class="btn btn-primary">More Details</a>
             </div>
             <!-- </div>
-        Deal of the week end -->
+            Deal of the week end -->
         </div>
 
         <!-- Pills content -->
@@ -1037,18 +1037,19 @@ padding-bottom:10px; background-color: rgba(254,217,37, 0.8) !Important;">DEAL
             <!-- image card 1 line 1 start -->
             @if (!empty($vehicles) && $vehicles->count())
                 @foreach ($vehicles->all() as $vehicle)
+               
                     <!-- use this for slideshow -->
                     <!-- @foreach (json_decode($vehicle->images, true) as $image)
     -->
                     <!-- <a href="{{ url('public/images/' . json_decode($vehicle->images, true)[0]) }}" class="portfolio-box">
-                <img src="{{ url('public/images/' . json_decode($vehicle->images, true)[0]) }}" class="img-responsive" alt="--">
-            </a> -->
+                    <img src="{{ url('public/images/' . json_decode($vehicle->images, true)[0]) }}" class="img-responsive" alt="--">
+                </a> -->
                     <!--
     @endforeach -->
                     <div class="col-6 col-md-4" style="padding-bottom: 15px;">
                         <div class="card" style="color: #000">
                             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                <img src="{{ url('public/images/' . json_decode($vehicle->images, true)[0]) }}"
+                                <img src="{{ url('images/' . json_decode($vehicle->images, true)[0]) }}"
                                     style="" class="img-fluid" />
                                 <a href="{{ route('details', $vehicle->id) }}">
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>

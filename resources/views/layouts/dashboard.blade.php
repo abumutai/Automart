@@ -471,18 +471,18 @@
                         <h1 style="font-family:Garamond;color:white">AAutomart | Home</h1>
                     </a>
                     <!-- Left links -->
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"  style="margin-left: 49% !important">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"  style="margin-left: 29% !important">
                         <li class="nav-item">
-                            <a class="nav-link" style="font-size: 25px;color:#CBBC27" href="#0">My Cars</a>
+                            <a class="nav-link" style="font-size: 20px;color:#CBBC27" href="#0">My Cars</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="font-size: 25px;color:#CBBC27" href="#1">Subscriptions</a>
+                            <a class="nav-link" style="font-size: 20px;color:#CBBC27" href="#1">Subscriptions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="font-size: 25px;color:#CBBC27" href="#2">Sells</a>
+                            <a class="nav-link" style="font-size: 20px;color:#CBBC27" href="#2">Sells</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="font-size: 25px;color:#CBBC27" href="#3">Add Car</a>
+                            <a class="nav-link" style="font-size: 20px;color:#CBBC27" href="#3">Add Car</a>
                         </li>
 
                     </ul>
