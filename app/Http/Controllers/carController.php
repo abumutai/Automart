@@ -14,6 +14,7 @@ class carController extends Controller
 
     public function show($id){
         $vehicle = Caronsells::find($id);
+        
         return view('details', compact('vehicle'));
     }
 

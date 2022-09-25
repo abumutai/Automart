@@ -31,7 +31,7 @@ class sellController extends Controller
             'year' => 'required',
             'price' => 'required',
             'miles' => 'required',
-            'vin' => 'required|unique:caronsells',
+            'vin' => 'required',
             'exterior' => 'required',
             'interior' => 'required',
             'fuel_type' => 'required',

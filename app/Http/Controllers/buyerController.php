@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CarMake;
-use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\CarMake;
+use App\Models\Caronsells;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Passwords\PasswordBroker;
 
@@ -55,7 +57,8 @@ class buyerController extends Controller
                     return view('buyer',compact('user'));
                 }else{
                     $makes = CarMake::all();
-                    return view('dealer',compact('user','makes'));
+                    $vehicles = Caronsells::where('email',$request->email)->paginate(10);
+                    return view('dealer',compact('user','makes','vehicles'));
                 }
             }else{
                 return redirect(route('login'))->with('errorMsg', 'Password is Incorrect. Try Again');  

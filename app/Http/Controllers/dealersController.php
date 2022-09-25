@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Caronsells;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Passwords\PasswordBroker;
+use Illuminate\Support\Facades\Auth;
 
 class dealersController extends Controller
 {
@@ -52,6 +54,7 @@ class dealersController extends Controller
         return redirect(route('login'))->with('successMsg', 'Car Dealer Registered Successfully. Login');
     }
     public function show(){
+      
         return view('dealer');
     }
     

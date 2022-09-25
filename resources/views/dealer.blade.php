@@ -220,12 +220,48 @@
                     </br>
                 </div>
                 <div class="col-md-10">
-                    Hello
-                    </br>
-                    </br>
-                    </br>
-                    </br>
-                    We'll show your cars here updated.
+                    <div class="row">
+                        <!-- image card 1 line 1 start -->
+                        @if (!empty($vehicles) && $vehicles->count())
+                            @foreach ($vehicles->all() as $vehicle)
+                                <!-- use this for slideshow -->
+                                <!-- @foreach (json_decode($vehicle->images, true) as $image)
+                -->
+                                <!-- <a href="{{ url('public/images/' . json_decode($vehicle->images, true)[0]) }}" class="portfolio-box">
+                                        <img src="{{ url('public/images/' . json_decode($vehicle->images, true)[0]) }}" class="img-responsive" alt="--">
+                                @endforeach -->
+                                <div class="col-6 col-md-4" style="padding-bottom: 15px;">
+                                    <div class="card" style="color: #000">
+                                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                            <img src="{{ url('images/' . json_decode($vehicle->images, true)[0]) }}" style=""
+                                                class="img-fluide" width="100%" height="300px" />
+                                            <a href="{{ route('details', $vehicle->id) }}">
+                                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                            </a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h6 class="card-title">Year of Manufacture: <b>{{ $vehicle->year }}</b></h6>
+                                            <h6 class="card-title">Price: <b>Ksh. {{ number_format("$vehicle->price", 2) }}</b></h6>
+                                            <h6 class="card-title">Make&Model: <b>{{ ucwords($vehicle->make) }} /
+                                                    {{ ucwords($vehicle->model) }}</b></h6>
+                                            <h6 class="card-title">Mileage: <b>{{ number_format("$vehicle->miles", 1) }} Kms</b></h6>
+                                            <h6 class="card-title">Dealer/Yard: <b>{{ $vehicle->firstname }}</b></h6>
+                                            <i class="fas fa-phone fa-1x"></i>&nbsp;{{ $vehicle->phone }}
+                                            <i class="fas fa-map-marker-alt fa-1x"></i>&nbsp;{{ $vehicle->county }}
+                                            <a href="{{ route('details', $vehicle->id) }}" class="btn btn-primary">More Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @else
+                            <div class="alert alert-success" role="alert">
+                                You have not added any car
+                            </div>
+                        @endif
+                    </div>
+                    <div class="pagination" style="color:#fff;">
+                        {{ $vehicles->links() }}
+                    </div>
                 </div>
             </div>
             <footer class="mt-5 w-100 pt-5">
