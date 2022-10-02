@@ -18,6 +18,7 @@ class VehicleController extends Controller
     }
     function add(Request $req)
     {
+        
         $caronsales= new Caronsells;
         $caronsales->title=$req->title;
         $caronsales->country=$req->country;

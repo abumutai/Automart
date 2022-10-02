@@ -1,4 +1,4 @@
-@extends('layouts.main')
+{{-- @extends('layouts.main')
 @section('content')
     <!-- show success message -->
     @if (session('successMsg'))
@@ -39,7 +39,7 @@
 
                     {{-- @foreach ($getCarMakes as $carMake) 
       <p> Item: {{ $carMake -> car_make_name }}</p>
-  @endforeach --}}
+  @endforeach 
 
                     <div class="mb-4">
                         <input type="email" name="email" class="form-outline form-control" id="email"
@@ -81,4 +81,63 @@
     </div>
     <br />
     <br />
+@endsection --}}
+@extends('layouts.new')
+
+@section('content')
+    <!-- Sub banner start -->
+    <div class="sub-banner">
+        <div class="container breadcrumb-area">
+            <div class="breadcrumb-areas">
+                <h1>Login</h1>
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li class="active">Login</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Sub Banner end -->
+
+    <!-- Shop checkout start -->
+    <div class="shop-checkout content-area-5">
+        <div class="container">
+            <div class="from-checkout">
+                <div class="row">
+                    <div class="col-lg-2 col-md-3">
+                    </div>
+                    <div class="col-lg-8 col-md-12">
+                        <div class="heading-4">
+                            <h4>Already Registered?</h4>
+                        </div>
+                        <form action="{{ route('userlogin') }}" method="POST" >
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Email"
+                                            aria-label="First Name" name="email">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Password"
+                                            aria-label="Last Name" name="password">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <button class="btn w-25 btn-sm bg-success" type="submit"><span
+                                    class="text-white h3">Login</span></button> <span class="text-success bolder h3"> New
+                                User? <a href="{{ route('userreg') }}"> Register Here</a></span>
+                        </form>
+                        <br>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Shop checkout end -->
 @endsection

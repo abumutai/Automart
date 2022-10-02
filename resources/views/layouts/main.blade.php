@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>AAutomart | AAKenya</title>
+    <title>Automart | AAKenya</title>
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ url('favicon/favicon.ico') }}">
     <link rel="apple-touch-icon" sizes="57x57" href="{{ url('favicon/apple-icon-57x57.png') }}">
@@ -477,15 +477,17 @@
                 <div class="collapse navbar-collapse m-5" id="navbarSupportedContent">
                     <!-- Navbar brand -->
                     <a class="navbar-brand mt-2 mt-lg-0" href="{{ route('home') }}">
-                        <h1 style="font-family:Garamond;color:white;margin-left:5%!important">AAutomart | AA Kenya</h1>
+                        <h1 style="font-family:Garamond;color:white;margin-left:5%!important">Automart | AA Kenya</h1>
                     </a>
                     <!-- Left links -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 10% !important">
                         <li class="nav-item">
-                            <a class="nav-link" style="font-size: 20px;color:#CBBC27" href="{{ route('all_cars') }}">All Cars</a>
+                            <a class="nav-link" style="font-size: 20px;color:#CBBC27"
+                                href="{{ route('all_cars') }}">All Cars</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="font-size: 20px;color:#CBBC27" href="{{ route('dealerHome') }}">Sell Your Car</a>
+                            <a class="nav-link" style="font-size: 20px;color:#CBBC27"
+                                href="{{ route('dealerHome') }}">Sell Your Car</a>
                         </li>
                         <!--<li class="nav-item">-->
                         <!--<a class="nav-link" style="font-size: 20px;color:#CBBC27" href="{{ route('dealerHome') }}">Register as Seller</a>-->
@@ -494,10 +496,12 @@
                         <!--<a class="nav-link" style="font-size: 20px;color:#CBBC27" href="{{ route('userreg') }}">Register as Buyer</a>-->
                         <!--</li>-->
                         <li class="nav-item">
-                            <a class="nav-link" style="font-size: 20px;color:#CBBC27" href="{{ route('login') }}">Login</a>
+                            <a class="nav-link" style="font-size: 20px;color:#CBBC27"
+                                href="{{ route('login') }}">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="font-size: 20px;color:#CBBC27" href="{{ route('contact') }}">Contact Us</a>
+                            <a class="nav-link" style="font-size: 20px;color:#CBBC27"
+                                href="{{ route('contact') }}">Contact Us</a>
                         </li>
                     </ul>
                     <div class="float-end"><a class="nav-link" href="#"><button type="button"

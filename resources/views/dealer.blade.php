@@ -851,8 +851,8 @@
                                     <input type="checkbox" value="Rear View Camera" id="Rear View Camera"
                                         name="features[]" required>&nbsp;&nbsp;&nbsp;
                                     <a class="text-center p-3"
-                                        href="https://automart.aakenya.co.ke/resources/Terms and conditions to seller.pdf"
-                                        target="blank">Terms And Conditions<br></a>
+                                        href="/Terms and conditions to seller.pdf"
+                                        target="_blank">Terms And Conditions<br></a>
                                     By clicking this, you have agreed to terms and conditions
                                 </div>
                             </div>

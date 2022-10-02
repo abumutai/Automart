@@ -1,4 +1,4 @@
-@extends('layouts.main')
+{{-- @extends('layouts.main')
 @section('content')
     <!-- show success message -->
     @if (session('successMsg'))
@@ -1004,7 +1004,7 @@
                             aria-hidden=""></i>&nbsp;SEARCH</button>
                 </form>
             </div>
-        </div> --}}
+        </div> 
         <!-- <div class="row" style="padding-left: 20px; padding-top: 10px; padding-bottom: 20px; color: #fff;">
                     <div class="col-6 col-md-4" style="background-color : rgba(0,0,0, 0.3) !Important;"> -->
         <span class="badge bg-info"
@@ -1076,4 +1076,155 @@ padding-bottom:10px; background-color: rgba(254,217,37, 0.8) !Important;">DEAL
             {{ $vehicles->links() }}
         </div>
     </div>
+@endsection --}}
+@extends('layouts.new')
+@section('content')
+    <!-- Sub banner start -->
+    <div class="sub-banner">
+        <div class="container breadcrumb-area">
+            <div class="breadcrumb-areas">
+                <h1>All Cars</h1>
+                <ul class="breadcrumbs">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">All Cars</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Sub Banner end -->
+
+    <!-- Featured car start -->
+    <div class="featured-car content-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <!-- Option bar start -->
+                    <div class="option-bar clearfix">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-6 col-sm-12">
+                                <div class="sorting-options2">
+                                    <h5>You are currently viewing all</h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-6 col-sm-12">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @if (!empty($vehicles) && $vehicles->count())
+                            @foreach ($vehicles->all() as $vehicle)
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="car-box-3">
+                                        <div class="car-thumbnail">
+                                            <a href="{{ route('details', $vehicle->id) }}" class="car-img">
+                                                <div class="for">For Sale</div>
+                                                <div class="price-box">
+                                                   
+                                                    <span>Ksh. {{ number_format("$vehicle->price", 2) }}</span>
+                                                </div>
+                                                <img class="d-block w-100" src="{{ url('images/' . json_decode($vehicle->images, true)[0]) }}" width="356" height="254" alt="car">
+                                            </a>
+                                            <div class="carbox-overlap-wrapper">
+                                                <div class="overlap-box">
+                                                    {{-- <div class="overlap-btns-area">
+                                                        <a class="overlap-btn" data-bs-toggle="modal"
+                                                            data-bs-target="#carOverviewModal">
+                                                            <i class="fa fa-eye-slash"></i>
+                                                        </a>
+                                                        <a class="overlap-btn wishlist-btn">
+                                                            <i class="fa fa-heart-o"></i>
+                                                        </a>
+                                                        <a class="overlap-btn compare-btn">
+                                                            <i class="fa fa-balance-scale"></i>
+                                                        </a>
+                                                        <div class="car-magnify-gallery">
+                                                            <a href="{{ url('assets/img/car/car-1.jpg')}}" class="overlap-btn"
+                                                                data-sub-html="<h4>Lamborghini</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                                <i class="fa fa-expand"></i>
+                                                                <img class="hidden" src="{{ url('assets/img/car/car-1.jpg')}}"
+                                                                    alt="hidden-img">
+                                                            </a>
+                                                            <a href="{{ url('assets/img/car/car-2.jpg')}}" class="hidden"
+                                                                data-sub-html="<h4>Ferrari Red Car</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                                <img class="hidden" src="{{ url('assets/img/car/car-2.jpg')}}"
+                                                                    alt="hidden-img">
+                                                            </a>
+                                                            <a href="{{ url('assets/img/car/car-3.jpg')}}" class="hidden"
+                                                                data-sub-html="<h4>Bmw e46 m3 Diski Serie</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                                <img class="hidden" src="{{ url('assets/img/car/car-3.jpg')}}"
+                                                                    alt="hidden-img">
+                                                            </a>
+                                                            <a href="{{ url('assets/img/car/car-4.jpg')}}" class="hidden"
+                                                                data-sub-html="<h4>Volkswagen Scirocco 2016</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                                <img class="hidden" src="{{ url('assets/img/car/car-4.jpg')}}"
+                                                                    alt="hidden-img">
+                                                            </a>
+                                                            <a href="{{ url('assets/img/car/car-5.jpg')}}" class="hidden"
+                                                                data-sub-html="<h4>Porsche Cayen Last</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                                <img class="hidden" src="{{ url('assets/img/car/car-5.jpg')}}"
+                                                                    alt="hidden-img">
+                                                            </a>
+                                                        </div>
+                                                    </div> --}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <h1 class="title">
+                                                <a href="{{ route('details', $vehicle->id) }}">{{$vehicle->carmodel?$vehicle->carmodel->car_model_name:''}}</a>
+                                            </h1>
+                                            <ul class="custom-list">
+                                                <li>
+                                                    <a href="{{ route('details', $vehicle->id) }}">{{$vehicle->carmake?$vehicle->carmake->car_make_name:''}}</a> 
+                                                </li>
+                                               
+                                            </ul>
+                                            <ul class="facilities-list clearfix">
+                                                <li>
+                                                    <i class="flaticon-fuel"></i> {{ $vehicle->firstname }}
+                                                </li>
+                                                <li>
+                                                    <i class="flaticon-way"></i> {{ number_format("$vehicle->miles", 1) }} Kms
+                                                </li>
+                                                <li>
+                                                    <i class="flaticon-manual-transmission"></i> {{ $vehicle->county }}
+                                                </li>
+                                                <li>
+                                                    <i class="flaticon-car"></i> {{ $vehicle->phone }}
+                                                </li>
+                                                <li>
+                                                    <i class="flaticon-gear"></i> Ksh. {{ number_format("$vehicle->price", 2) }}
+                                                </li>
+                                                <li>
+                                                    <i class="flaticon-calendar-1"></i>{{ $vehicle->year }}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="footer clearfix">
+                                            <div class="pull-left ratings">
+                                                <i class="fa fa-phone"></i>
+                                        
+                                                <span>Call or Chat with the owner</span>
+                                                <i class="fa fa-envelope"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+                    </div>
+                    <!-- Page navigation start -->
+                    <div class="pagination-box text-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                              {{$vehicles->links()}}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Featured car end -->
 @endsection

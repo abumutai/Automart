@@ -1,4 +1,4 @@
-@extends('layouts.main')
+{{-- @extends('layouts.main')
 @section('content')
     <!-- show success message -->
     @if (session('successMsg'))
@@ -67,7 +67,7 @@ padding-bottom:10px; background-color: rgba(254,217,37, 0.8) !Important;"></span
                     $place = $vehicle->county;
                 @endphp
                 <!-- Single item -->
-                @foreach (json_decode($vehicle->images) as $key=> $item)
+                @foreach (json_decode($vehicle->images) as $key => $item)
                     <div class="carousel-item {{$key==0 ? 'active':''}}">
                         <img src="{{ url('images/' . $item) }}" class="d-block w-100" alt="Sunset Over the City"
                             style="height:370px;" />
@@ -187,7 +187,7 @@ padding-bottom:10px; background-color: rgba(254,217,37, 0.8) !Important;">DEAL
                         </tr>
                         <tr>
                             <td>
-                                Vehicle Regiatration No.&nbsp;:&nbsp;<b>{{ strtoupper($vehicle->vin) }}</b>
+                                Vehicle Registration No.&nbsp;:&nbsp;<b>{{ strtoupper($vehicle->vin) }}</b>
                             </td>
                         </tr>
                     </tbody>
@@ -223,4 +223,185 @@ padding-bottom:10px; background-color: rgba(254,217,37, 0.8) !Important;">DEAL
             </div>
         </div>
     </div>
+@endsection --}}
+@extends('layouts.new')
+
+@section('content')
+    <!-- Sub banner start -->
+    <div class="sub-banner">
+        <div class="container breadcrumb-area">
+            <div class="breadcrumb-areas">
+                <h1>Car Details</h1>
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li class="active">Car Details</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Sub Banner end -->
+
+    <!-- Car details page start -->
+    <div class="car-details-page content-area-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-xs-12">
+                    <div class="slide car-details-section cds-2">
+                        <!-- Heading start -->
+                        <div class="heading-car clearfix">
+                            <div class="pull-left">
+                                <h3>{{ strtoupper($vehicle->carmake->car_make_name) }}
+                                    {{ strtoupper($vehicle->carmodel->car_model_name) }}</h3>
+                                <p>
+                                    <i class="flaticon-pin"></i>{{ $vehicle->county }}
+                                </p>
+                            </div>
+                            <div class="pull-right">
+                                <div class="price-box-3"><sup>Kshs <span>{{ $vehicle->price }}</span></div>
+                            </div>
+                        </div>
+                        <div class="product-slider-box cds-2 clearfix mb-30">
+                            <div class="product-img-slide">
+                                <div class="slider-for">
+                                    @foreach (json_decode($vehicle->images) as $key => $item)
+                                        <img src="{{ url('images/' . $item) }}" class="img-fluid w-100" alt="slider-car"
+                                            width="589" height="421">
+                                    @endforeach
+                                </div>
+                                <div class="slider-nav">
+                                    @foreach (json_decode($vehicle->images) as $key => $item)
+                                        <div class="thumb-slide"><img src="{{ url('images/' . $item) }}" class="img-fluid"
+                                                alt="small-car" width="133" height="95">
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Advanced search start -->
+                        <div class="widget-2 advanced-search bg-grea-2 as-2">
+                            <h3 class="sidebar-title">Car Details</h3>
+                            <div class="s-border"></div>
+                            <div class="m-border"></div>
+                            <ul>
+                                <li>
+                                    <span>Make</span>{{ strtoupper($vehicle->carmake->car_make_name) }}
+                                </li>
+                                <li>
+                                    <span>Model</span>{{ strtoupper($vehicle->carmodel->car_model_name) }}
+                                </li>
+                                <li>
+                                    <span>Transmission</span>{{ strtoupper($vehicle->transmission) }}
+                                </li>
+                                <li>
+                                    <span>Year of Manufacture</span>{{ $vehicle->year }}
+                                </li>
+                                <li>
+                                    <span>Fuel </span>{{ strtoupper($vehicle->fuel_type) }}
+                                </li>
+                                <li>
+                                    <span>Color</span>{{ strtoupper($vehicle->exterior) }}
+                                </li>
+                                <li>
+                                    <span>Vehicle Type</span>{{ strtoupper($vehicle->vehicle_type) }}
+                                </li>
+                                <li>
+                                    <span>Vehicle Registration No. </span>{{ strtoupper($vehicle->vin) }}
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Tabbing box start -->
+                        <div class="tabbing tabbing-box mb-40">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#home" type="button" role="tab" aria-controls="home"
+                                        aria-selected="true">Description</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                                        type="button" role="tab" aria-controls="profile"
+                                        aria-selected="false">Features</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                    aria-labelledby="home-tab">
+                                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                                        <div class="accordion-item">
+                                            <div class="car-description mb-50">
+                                                <h3 class="heading-2">
+                                                    Description
+                                                </h3>
+                                                <p>{{ $vehicle->description }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="accordion accordion-flush" id="accordionFlushExample2">
+                                        <div class="accordion-item">
+                                            <div class="features-info mb-50">
+                                                <h3 class="heading-2">Features</h3>
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                        <ul>
+                                                            @foreach (json_decode($vehicle->features, true) as $feature)
+                                                            <li>
+                                                                {{ $feature }}
+                                                            </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="sidebar-right">
+                        <!-- Advanced search start -->
+                        <div class="widget advanced-search d-none-992">
+                            <h3 class="sidebar-title">Car Details</h3>
+                            <div class="s-border"></div>
+                            <div class="m-border"></div>
+                            <ul>
+                                <li>
+                                    <span>Make</span>{{ strtoupper($vehicle->carmake->car_make_name) }}
+                                </li>
+                                <li>
+                                    <span>Model</span>{{ strtoupper($vehicle->carmodel->car_model_name) }}
+                                </li>
+                                <li>
+                                    <span>Transmission</span>{{ strtoupper($vehicle->transmission) }}
+                                </li>
+                                <li>
+                                    <span>Year of Manufacture</span>{{ $vehicle->year }}
+                                </li>
+                                <li>
+                                    <span>Fuel </span>{{ strtoupper($vehicle->fuel_type) }}
+                                </li>
+                                <li>
+                                    <span>Color</span>{{ strtoupper($vehicle->exterior) }}
+                                </li>
+                                <li>
+                                    <span>Vehicle Type</span>{{ strtoupper($vehicle->vehicle_type) }}
+                                </li>
+                                <li>
+                                    <span>Vehicle Registration No. </span>{{ strtoupper($vehicle->vin) }}
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Question start -->
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Car details page end -->
 @endsection

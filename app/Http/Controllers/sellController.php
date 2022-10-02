@@ -12,8 +12,9 @@ use App\Models\CarModel;
 
 class sellController extends Controller
 {
-    public function index(){
-        $make= CarMake::all();
+    public function index()
+    {
+        $make = CarMake::all();
         return view('sell', compact('make'));
     }
     // public function dealer()
@@ -21,7 +22,8 @@ class sellController extends Controller
     //     $make= car_make::all();
     //     return view('make'));
     // }
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $this->validate($request, [
             'title' => 'required',
             'country'  => 'required',
@@ -46,24 +48,24 @@ class sellController extends Controller
             'email' => 'required',
             'phone' => 'required'
         ]);
-
+        if (count($request->images) > 10) {
+            return redirect()->back()->with('errorMsg', 'Images must not be more than 10');
+        }
         $vehicles = Caronsells::where('vin', $request->vin)->first();
-        if($vehicles == true){
+        if ($vehicles == true) {
             return redirect(route('sellcar'))->with('errorMsg', 'Vehicle Already Listed.');
         }
-        
-        if($request->hasfile('images'))
-        {
 
-           foreach($request->file('images') as $image)
-           {
-               $name=$image->getClientOriginalName();
-               $image->move(public_path().'/images/', $name);  
-               $data[] = $name;  
-           }
+        if ($request->hasfile('images')) {
+
+            foreach ($request->file('images') as $image) {
+                $name = $image->getClientOriginalName();
+                $image->move(public_path() . '/images/', $name);
+                $data[] = $name;
+            }
         }
         $prefix = "GWAAK";
-        $carID = $prefix.rand();
+        $carID = $prefix . rand();
 
         $carOnSell = new Caronsells;
         $carOnSell->title = $request->title;
@@ -83,24 +85,24 @@ class sellController extends Controller
         $carOnSell->transmission = $request->transmission;
         $carOnSell->vehicle_type = $request->vehicle_type;
         $carOnSell->description = $request->description;
-        $carOnSell->images=json_encode($data);
+        $carOnSell->images = json_encode($data);
         $carOnSell->firstname = $request->firstname;
         $carOnSell->lastname = $request->lastname;
         $carOnSell->email = $request->email;
         $carOnSell->phone = $request->phone;
         $carOnSell->carId = $carID;
         $carOnSell->save();
-        $message= 'Vehicle uploaded successfully';
-        return redirect(route('payment'))->with(['successMsg' => $message, 'carID' => $carID ]);
+        $message = 'Vehicle uploaded successfully';
+        return redirect(route('payment'))->with(['successMsg' => $message, 'carID' => $carID]);
     }
-    public function pay(){
+    public function pay()
+    {
         $packs =  $packs = Payment::all();
         return view('payments', compact('packs'));
     }
     public function getmodel($id)
     {
-        $model= CarModel::where('car_make_id',$id)->pluck("car_model_name","id");
+        $model = CarModel::where('car_make_id', $id)->pluck("car_model_name", "id");
         return json_encode($model);
     }
-
 }
